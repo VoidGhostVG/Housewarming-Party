@@ -1,63 +1,144 @@
-/* ===== MENU ===== */
+/* =========================================================
+   MENU — navegação flutuante vertical
+========================================================= */
 
 nav.menu {
-    width: 100%;
-    background: linear-gradient(135deg, var(--rosa-forte), var(--rosa-medio));
-    padding: 16px 0;
-    box-shadow: 0 4px 15px rgba(231, 84, 128, 0.35);
-    font-family: var(--fonte-corpo);
-    border-radius: 0 0 20px 20px;
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    right: 24px;
+
+    width: 58px;
+    padding: 8px;
+
+    transform: translateY(-50%);
+
+    background: rgba(255,248,243,.82);
+    border: 1px solid rgba(110,75,69,.18);
+    border-radius: 30px;
+
+    box-shadow: 0 15px 45px rgba(75,46,54,.14);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 nav.menu > ul {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
+    gap: 7px;
 
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 nav.menu > ul > li {
-    position: relative;
+    width: 100%;
 }
 
 nav.menu a {
-    display: block;
-    color: #fff;
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+    margin: 0 auto;
+
+    color: var(--romantic-brown);
     text-decoration: none;
+
+    font-size: 0;
+    border-radius: 50%;
+
+    transition: background .22s ease, color .22s ease, transform .22s ease;
+}
+
+/* transforma os textos atuais em marcadores minimalistas */
+nav.menu > ul > li:nth-child(1) a::before { content: "⌂"; }
+nav.menu > ul > li:nth-child(2) a::before { content: "♡"; }
+nav.menu > ul > li:nth-child(3) a::before { content: "◌"; }
+nav.menu > ul > li:nth-child(4) a::before { content: "✦"; }
+nav.menu > ul > li:nth-child(5) a::before { content: "→"; }
+
+nav.menu a::before {
     font-size: 16px;
-    font-weight: 600;
-
-    padding: 10px 18px;
-    border-radius: 999px;
-
-    transition: all 0.3s ease;
+    line-height: 1;
 }
 
-/* Efeito nos links */
+nav.menu a:hover {
+    color: #fff;
+    background: var(--romantic-pink);
+    transform: scale(1.08);
+}
 
-nav.menu > ul > li > a:hover {
+nav.menu li:first-child a {
+    background: var(--romantic-ink);
+    color: #fff;
+}
+
+nav.menu a::after {
+    content: attr(href);
+    position: absolute;
+    right: 54px;
+
+    width: max-content;
+    padding: 7px 10px;
+
+    color: var(--romantic-ink);
     background: #fff;
-    color: var(--rosa-forte);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 5px 12px rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--romantic-line);
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .05em;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(5px);
+    transition: opacity .2s ease, transform .2s ease;
 }
 
-/* ===== RESPONSIVO ===== */
+nav.menu a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-@media (max-width: 600px) {
+@media (max-width: 780px) {
+    nav.menu {
+        position: fixed;
+        left: 50%;
+        right: auto;
+        bottom: 16px;
+        top: auto;
+
+        width: min(350px, calc(100% - 30px));
+        padding: 7px;
+
+        transform: translateX(-50%);
+        border-radius: 999px;
+    }
 
     nav.menu > ul {
-        flex-direction: column;
-        gap: 6px;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 2px;
     }
 
     nav.menu > ul > li {
-        width: 90%;
-        text-align: center;
+        width: auto;
+        flex: 1;
+    }
+
+    nav.menu a {
+        width: 42px;
+        height: 42px;
+    }
+
+    nav.menu a::after {
+        display: none;
     }
 }
