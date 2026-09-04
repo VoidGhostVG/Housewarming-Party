@@ -11,10 +11,3 @@ Site feito em React + Vite para organizar o cadastro de convidados de um chá de
 - **Perguntas** — perguntas frequentes sobre o evento.
 
 Os cadastros são salvos no `localStorage` do navegador, então não é necessário rodar nenhum servidor além do próprio Vite.
-
-## Como rodar
-
-```bash
-npm install
-npm run dev
-```
