@@ -1,0 +1,35 @@
+.footer {
+    width: 100%;
+    padding: 25px 0;
+    margin-top: 40px;
+    background: linear-gradient(135deg, var(--rosa-forte), var(--rosa-medio));
+    border-top: 3px solid var(--rosa-suave);
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    box-shadow: 0 -5px 15px rgba(231, 84, 128, 0.25);
+}
+
+.footer h1 {
+    margin: 0;
+    color: #fff;
+    font-family: var(--fonte-titulo);
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* Efeito suave no texto */
+.footer h1:hover {
+    color: #ffe3ec;
+    transition: 0.3s;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .footer h1 {
+        font-size: 15px;
+    }
+}

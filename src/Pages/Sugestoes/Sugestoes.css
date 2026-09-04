@@ -1,0 +1,145 @@
+.sugestoes-container {
+  min-height: 100vh;
+  font-family: var(--fonte-corpo);
+  color: var(--texto);
+}
+
+/* =========================================================
+   LAYOUT (imagem fixa + sugestões)
+========================================================= */
+
+.sugestoes-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 35px;
+  align-items: start;
+
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 40px 0 70px;
+}
+
+.sugestoes-imagem {
+  position: sticky;
+  top: 20px;
+}
+
+.sugestoes-imagem img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border-radius: 24px;
+  border: 4px solid #fff;
+
+  box-shadow: 0 10px 25px rgba(231, 84, 128, 0.25);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.sugestoes-main {
+  min-width: 0;
+}
+
+/* =========================================================
+   CATEGORIA
+========================================================= */
+
+.sugestao-categoria {
+  margin-bottom: 55px;
+}
+
+.sugestao-categoria h2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 28px;
+
+  font-family: var(--fonte-titulo);
+  font-weight: normal;
+  font-size: 26px;
+
+  color: var(--rosa-forte);
+}
+
+.sugestao-categoria h2::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--rosa-suave), transparent);
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.sugestao-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.sugestao-card {
+  padding: 24px;
+
+  background: var(--branco);
+
+  border: 1px solid var(--rosa-claro);
+  border-top: 5px solid var(--rosa-medio);
+
+  border-radius: 18px;
+
+  box-shadow: 0 6px 18px rgba(231, 84, 128, 0.12);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.sugestao-card h3 {
+  margin-bottom: 10px;
+  color: var(--rosa-forte);
+  font-size: 19px;
+}
+
+.sugestao-card p {
+  color: var(--texto);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sugestao-card:hover {
+  transform: translateY(-6px);
+  border-top-color: var(--rosa-forte);
+  box-shadow: 0 14px 28px rgba(231, 84, 128, 0.2);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 800px) {
+  .sugestoes-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sugestoes-imagem {
+    position: static;
+  }
+
+  .sugestoes-imagem img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sugestao-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,48 @@
+.header-cha {
+    background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-forte));
+    color: white;
+    padding: 45px 25px;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(231, 84, 128, 0.3);
+}
+
+.header-icone {
+    display: block;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.header-cha h1 {
+    margin: 0;
+    font-family: var(--fonte-titulo);
+    font-size: 38px;
+    font-weight: normal;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.header-cha p {
+    margin: 15px auto 0;
+    max-width: 620px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff0f5;
+}
+
+.divider {
+    width: 80%;
+    max-width: 900px;
+    height: 4px;
+    margin: 30px auto;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--rosa-suave),
+        var(--rosa-forte),
+        transparent
+    );
+}

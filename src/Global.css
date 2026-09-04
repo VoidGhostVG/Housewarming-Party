@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa-forte: #e75480;
+    --rosa-medio: #ff8fab;
+    --rosa-suave: #ffb3c6;
+    --rosa-claro: #ffe3ec;
+    --rosa-clarissimo: #fff0f5;
+    --branco: #fffdfd;
+    --texto: #5a3d47;
+    --fonte-titulo: 'Pacifico', cursive;
+    --fonte-corpo: 'Quicksand', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    color: var(--texto);
+    background-color: var(--rosa-clarissimo);
+    background-image:
+        linear-gradient(rgba(255, 240, 245, 0.85), rgba(255, 240, 245, 0.85)),
+        url('./assets/wallpaper_black.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    color: var(--rosa-forte);
+}
+
+::selection {
+    background: var(--rosa-suave);
+    color: #fff;
+}
+
+/* ===== CTA da Home ===== */
+.home-cta {
+    text-align: center;
+    padding: 30px 20px 50px;
+}
+
+.home-cta p {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--texto);
+}
+
+.home-cta-botao {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--rosa-forte), var(--rosa-medio));
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(231, 84, 128, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-cta-botao:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 10px 22px rgba(231, 84, 128, 0.45);
+}

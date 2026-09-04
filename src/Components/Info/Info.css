@@ -1,0 +1,51 @@
+/* Seção de informações do evento */
+.info-secao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+.info-secao article {
+    width: 280px;
+    padding: 30px;
+    background-color: var(--branco);
+    border-radius: 20px;
+    border: 2px solid var(--rosa-claro);
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(231, 84, 128, 0.15);
+    transition: 0.3s;
+}
+
+.info-icone {
+    display: block;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.info-secao article h2 {
+    color: var(--rosa-forte);
+    font-family: var(--fonte-titulo);
+    font-weight: normal;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.info-secao article p {
+    color: var(--texto);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.info-secao article:hover {
+    transform: translateY(-8px);
+    border-color: var(--rosa-medio);
+    box-shadow: 0 12px 25px rgba(231, 84, 128, 0.25);
+}
+
+@media (max-width: 700px) {
+    .info-secao article {
+        width: 90%;
+    }
+}

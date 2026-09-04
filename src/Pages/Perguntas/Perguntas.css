@@ -1,0 +1,130 @@
+.containerPerguntas {
+  min-height: 70vh;
+  padding: 50px 20px;
+  font-family: var(--fonte-corpo);
+  color: var(--texto);
+  box-sizing: border-box;
+}
+
+.containerPerguntas h1 {
+  max-width: 900px;
+  margin: 0 auto 15px;
+  padding: 30px 25px;
+
+  background: linear-gradient(135deg, var(--rosa-forte), var(--rosa-medio));
+
+  color: #ffffff;
+
+  font-family: var(--fonte-titulo);
+  font-weight: normal;
+  text-align: center;
+  font-size: 36px;
+  letter-spacing: 1px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 25px rgba(231, 84, 128, 0.25);
+}
+
+.containerPerguntas > a {
+  display: block;
+  width: fit-content;
+
+  margin: 20px auto 40px;
+  padding: 12px 25px;
+
+  background: linear-gradient(135deg, var(--rosa-forte), var(--rosa-medio));
+  color: white;
+
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+
+  border-radius: 999px;
+
+  transition: all 0.3s ease;
+}
+
+.containerPerguntas > a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(231, 84, 128, 0.3);
+}
+
+.contentPerguntas {
+  width: min(800px, 92%);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.perguntaItem {
+  padding: 20px 24px;
+
+  background: var(--branco);
+
+  border: 1px solid var(--rosa-claro);
+  border-left: 6px solid var(--rosa-forte);
+
+  border-radius: 16px;
+
+  box-shadow: 0 5px 16px rgba(231, 84, 128, 0.1);
+
+  transition: box-shadow 0.3s ease;
+}
+
+.perguntaItem:hover {
+  box-shadow: 0 10px 22px rgba(231, 84, 128, 0.18);
+}
+
+.perguntaItem summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--rosa-forte);
+  list-style: none;
+}
+
+.perguntaItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.perguntaItem summary::before {
+  content: "🤍 ";
+}
+
+.perguntaItem[open] summary::before {
+  content: "💗 ";
+}
+
+.perguntaItem p {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rosa-claro);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--texto);
+}
+
+.duvidaExtra {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 15px;
+  color: var(--texto);
+}
+
+@media (max-width: 650px) {
+  .containerPerguntas {
+    padding: 30px 15px;
+  }
+
+  .containerPerguntas h1 {
+    padding: 24px 20px;
+    font-size: 28px;
+  }
+
+  .perguntaItem {
+    padding: 16px 18px;
+  }
+}

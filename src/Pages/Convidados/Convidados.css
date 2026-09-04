@@ -1,0 +1,180 @@
+.containerConvidados {
+  min-height: 70vh;
+  padding: 50px 20px;
+  font-family: var(--fonte-corpo);
+  color: var(--texto);
+  box-sizing: border-box;
+}
+
+/* TÍTULO */
+.containerConvidados h1 {
+  max-width: 900px;
+  margin: 0 auto 25px;
+  padding: 25px;
+
+  background: linear-gradient(135deg, var(--rosa-forte), var(--rosa-medio));
+  color: white;
+
+  font-family: var(--fonte-titulo);
+  font-weight: normal;
+  text-align: center;
+  font-size: 32px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 6px 15px rgba(231, 84, 128, 0.25);
+}
+
+/* BOTÃO VOLTAR */
+.containerConvidados > a {
+  display: block;
+  width: fit-content;
+
+  margin: 0 auto 35px;
+  padding: 12px 25px;
+
+  background: linear-gradient(135deg, var(--rosa-forte), var(--rosa-medio));
+  color: white;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  border-radius: 999px;
+
+  transition: 0.3s;
+}
+
+.containerConvidados > a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(231, 84, 128, 0.4);
+}
+
+.semConvidados {
+  text-align: center;
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.semConvidados a {
+  font-weight: 700;
+}
+
+/* ÁREA DOS CONVIDADOS */
+.contentConvidados {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+/* CARD DE CADA CONVIDADO */
+.contentConvidados article {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 25px;
+
+  background: var(--branco);
+
+  border: 1px solid var(--rosa-claro);
+  border-left: 6px solid var(--rosa-forte);
+
+  border-radius: 18px;
+
+  box-shadow: 0 4px 12px rgba(231, 84, 128, 0.1);
+
+  box-sizing: border-box;
+
+  min-width: 0;
+
+  transition: 0.3s;
+}
+
+/* ÍCONE */
+.contentConvidados article::before {
+  content: "💗";
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: 10px;
+
+  background: var(--rosa-claro);
+
+  border-radius: 50%;
+
+  font-size: 20px;
+}
+
+/* "NOME:", "EMAIL:", etc */
+.contentConvidados article strong {
+  display: block;
+
+  color: var(--rosa-forte);
+
+  font-size: 13px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+
+  margin-top: 5px;
+}
+
+/* DADOS DO CONVIDADO */
+.contentConvidados article span {
+  display: block;
+
+  color: #333;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  margin-bottom: 8px;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* EFEITO DO CARD */
+.contentConvidados article:hover {
+  transform: translateY(-5px);
+
+  border-left-color: var(--rosa-suave);
+
+  box-shadow: 0 10px 25px rgba(231, 84, 128, 0.2);
+}
+
+/* TABLET / CELULAR */
+@media (max-width: 700px) {
+  .contentConvidados {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 450px) {
+  .containerConvidados {
+    padding: 30px 15px;
+  }
+
+  .containerConvidados h1 {
+    font-size: 26px;
+    padding: 20px;
+  }
+
+  .contentConvidados article {
+    padding: 20px;
+  }
+}
